@@ -334,11 +334,24 @@ app.post('/save-data-add', async (req, res) => {
 
       const collection = db.collection("Logs");
       
-      const currentTime = new Date();
-      const hours = currentTime.getHours().toString().padStart(2, '0');
-      const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-      const seconds = currentTime.getSeconds().toString().padStart(2, '0');
-      const current_time = `${hours}:${minutes}:${seconds}`;
+      // Get current date and time in UTC
+      const currentDate = new Date();
+
+      // Adjust the time zone offset to GMT+5:30
+      currentDate.setUTCHours(currentDate.getUTCHours() + 5);
+      currentDate.setUTCMinutes(currentDate.getUTCMinutes() + 30);
+
+      // Format the date
+      const day = String(currentDate.getUTCDate()).padStart(2, '0');
+      const month = String(currentDate.getUTCMonth() + 1).padStart(2, '0'); // Month is zero-based
+      const year = currentDate.getUTCFullYear();
+
+      // Format the time
+      const hours = String(currentDate.getUTCHours()).padStart(2, '0');
+      const minutes = String(currentDate.getUTCMinutes()).padStart(2, '0');
+
+      // Construct the formatted date and time string
+      const current_time = `${day}-${month}-${year} ${hours}:${minutes}`;
 
       const result = await collection.updateOne({ Email: req.session.user.Email, Status:{$eq:"Pending"} }, 
       { $set: 
@@ -377,11 +390,25 @@ app.post('/User_Help', async(req, res) => {
 
   req.session.login_error = 'none'
 
-const currentTime = new Date();
-const hours = currentTime.getHours().toString().padStart(2, '0');
-const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-const seconds = currentTime.getSeconds().toString().padStart(2, '0');
-const current_time = `${hours}:${minutes}:${seconds}`;
+// Get current date and time in UTC
+const currentDate = new Date();
+
+// Adjust the time zone offset to GMT+5:30
+currentDate.setUTCHours(currentDate.getUTCHours() + 5);
+currentDate.setUTCMinutes(currentDate.getUTCMinutes() + 30);
+
+// Format the date
+const day = String(currentDate.getUTCDate()).padStart(2, '0');
+const month = String(currentDate.getUTCMonth() + 1).padStart(2, '0'); // Month is zero-based
+const year = currentDate.getUTCFullYear();
+
+// Format the time
+const hours = String(currentDate.getUTCHours()).padStart(2, '0');
+const minutes = String(currentDate.getUTCMinutes()).padStart(2, '0');
+
+// Construct the formatted date and time string
+const current_time = `${day}-${month}-${year} ${hours}:${minutes}`;
+
 
 const { latitude,longitude,location_link,Address} = req.body;
 log_info = {
