@@ -90,9 +90,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="#">Rakshak<span>.</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <h1><a href="/home">Rakshak<span>.</span></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -191,7 +189,7 @@
                         .then((response) => {
                           if (response.results[0]) {
                             document.querySelector('#Address').value=response.results[0].formatted_address
-                            console.log(response.results[0].formatted_address)
+                            console.log(response)
                           } else {
                             window.alert("No results found");
                           }
@@ -270,7 +268,7 @@
             <div class="content d-flex flex-column justify-content-center ps-0 ps-xl-4">
               <h3 data-aos="fade-in" data-aos-delay="100"><i class="bi bi-megaphone-fill"></i>&nbsp; &nbsp;Emergency Guide</h3>
               <p data-aos="fade-in">
-                Here are a few steps to escape from a few types of threatening situations
+                Here are the few steps inorder to escape from few types of threatening situations
               </p>
               <div class="row gy-4 mt-3">
                 <div class="col-md-6 icon-box" data-aos="fade-up">
@@ -447,7 +445,7 @@ The DJI Tello drone is compact and lightweight, ideal for both recreational and 
 
         <div class="row footer-newsletter justify-content-center">
           <div class="col-lg-6">
-            <form action="" method="post">
+            <form>
               <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
             </form>
           </div>
@@ -506,7 +504,7 @@ The DJI Tello drone is compact and lightweight, ideal for both recreational and 
   
                                   <div class="d-flex flex-row flex-wrap">
                                       <div class="p-1"><form onsubmit="gpt(event,'q1')" id="form_data"><button type="submit" id="request_user_profile" name="request_user_profile" value="How to handle fire accidents?" class="btn btn-outline-primary">How to handle fire accidents?</button></form></div>
-                                      <div class="p-1"><form onsubmit="gpt(event,'q2')" id="form_data"><button type="submit" id="request_user_resume" name="request_user_resume"  value="How to handle human intimidations?" class="btn btn-outline-primary">How to handle human intimidations?</button></form></div>
+                                      <div class="p-1"><form onsubmit="gpt(event,'q2')" id="form_data"><button type="submit" id="request_user_resume" name="request_user_resume"  value="How to be in human initimidations?" class="btn btn-outline-primary">How to handle human initimidations?</button></form></div>
                                       <div class="p-1"><form onsubmit="gpt(event,'q3')" id="form_data"><button type="submit" id="request_user_interviewing" name="request_user_interviewing" value="How to handle theft situations?" class="btn btn-outline-primary">How to handle theft situations?</button></form></div>
   
                                   </div>
@@ -652,7 +650,7 @@ The DJI Tello drone is compact and lightweight, ideal for both recreational and 
             
                                             <div class="d-flex flex-row flex-wrap">
                                                 <div class="p-1"><form onsubmit="gpt(event,'q1')" id="form_data"><button type="submit" id="request_user_profile" name="request_user_profile" value="How to avoid fire accidents?" class="btn btn-outline-primary">How to avoid fire accidents?</button></form></div>
-                                      <div class="p-1"><form onsubmit="gpt(event,'q2')" id="form_data"><button type="submit" id="request_user_resume" name="request_user_resume"  value="How to handle human intimidations?" class="btn btn-outline-primary">How to handle human intimidations?</button></form></div>
+                                                <div class="p-1"><form onsubmit="gpt(event,'q2')" id="form_data"><button type="submit" id="request_user_resume" name="request_user_resume"  value="How to be in human initimidations?" class="btn btn-outline-primary">How to be in human initimidations?</button></form></div>
                                                 <div class="p-1"><form onsubmit="gpt(event,'q3')" id="form_data"><button type="submit" id="request_user_interviewing" name="request_user_interviewing" value="How to handle theft situations?" class="btn btn-outline-primary">How to handle theft situations?</button></form></div>
             
                                             </div>
