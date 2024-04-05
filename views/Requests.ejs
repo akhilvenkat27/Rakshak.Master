@@ -295,43 +295,34 @@ body {
 
 
                         <div class="row row-cols-1 row-cols-md-2 g-4">
+                          <% c = 1 %>
+                          <% if(data.LiveDroneCaptures){(data.LiveDroneCaptures).forEach((ele)=>{%>
                           <div class="col">
                             <div class="card">
-                              <img src="..." class="card-img-top" alt="...">
+                              <img src=<%= ele.URL%> class="card-img-top" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h5 class="card-title">Capture <%=c%> </h5>
+                                <% c+= 1 %>
+                                <p class="card-text">Image Fetched at <%= ele.Timestamp %></p>
                               </div>
                             </div>
                           </div>
-                          <div class="col">
-                            <div class="card">
-                              <img src="..." class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div class="card">
-                              <img src="..." class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div class="card">
-                              <img src="..." class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              </div>
-                            </div>
-                          </div>
+                          <% })} %>
+
+
                         </div>
+                        <% if(c===1){ %>
+                          <div class="d-flex justify-content-center mt-3">
+                            <div>
+                              <div class="card" style="width: 18rem; border: none;">
+                                <img src="assets/img/no_data.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <p class="card-text">No images captured at this moment !</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <% } %>
                       
 
 
@@ -415,7 +406,7 @@ body {
   
                                   <div class="d-flex flex-row flex-wrap">
                                       <div class="p-1"><form onsubmit="gpt(event,'q1')" id="form_data"><button type="submit" id="request_user_profile" name="request_user_profile" value="How to handle fire accidents?" class="btn btn-outline-primary">How to handle fire accidents?</button></form></div>
-                                      <div class="p-1"><form onsubmit="gpt(event,'q2')" id="form_data"><button type="submit" id="request_user_resume" name="request_user_resume"  value="How to handle human intimidations?" class="btn btn-outline-primary">How to handle human intimidations?</button></form></div>
+                                      <div class="p-1"><form onsubmit="gpt(event,'q2')" id="form_data"><button type="submit" id="request_user_resume" name="request_user_resume"  value="How to be in human initimidations?" class="btn btn-outline-primary">How to handle human initimidations?</button></form></div>
                                       <div class="p-1"><form onsubmit="gpt(event,'q3')" id="form_data"><button type="submit" id="request_user_interviewing" name="request_user_interviewing" value="How to handle theft situations?" class="btn btn-outline-primary">How to handle theft situations?</button></form></div>
   
                                   </div>
@@ -605,7 +596,7 @@ body {
             
                                             <div class="d-flex flex-row flex-wrap">
                                                 <div class="p-1"><form onsubmit="gpt(event,'q1')" id="form_data"><button type="submit" id="request_user_profile" name="request_user_profile" value="How to avoid fire accidents?" class="btn btn-outline-primary">How to avoid fire accidents?</button></form></div>
-                                                <div class="p-1"><form onsubmit="gpt(event,'q2')" id="form_data"><button type="submit" id="request_user_resume" name="request_user_resume"  value="How to handle human intimidations?" class="btn btn-outline-primary">How to handle human intimidations?</button></form></div>
+                                                <div class="p-1"><form onsubmit="gpt(event,'q2')" id="form_data"><button type="submit" id="request_user_resume" name="request_user_resume"  value="How to be in human initimidations?" class="btn btn-outline-primary">How to be in human initimidations?</button></form></div>
                                                 <div class="p-1"><form onsubmit="gpt(event,'q3')" id="form_data"><button type="submit" id="request_user_interviewing" name="request_user_interviewing" value="How to handle theft situations?" class="btn btn-outline-primary">How to handle theft situations?</button></form></div>
             
                                             </div>
