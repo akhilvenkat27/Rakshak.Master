@@ -191,10 +191,10 @@ body {
       <div class="p-5 rounded-3" style="background-color: #edf6ff;">
         <h1 class="text-body-emphasis text-center"> <b> <%= data.RequestBy %> </b>is in trouble..! Help him out</h1>
 
-        <div class="d-flex justify-content-around mt-5" style="background-color: #edf6ff;">
+        <div class="d-flex justify-content-around mt-5 flex-wrap" style="background-color: #edf6ff;">
         <div>
 
-          <div class="card" style="width: 27rem; border:none">
+          <div class="card" style="max-width: 27rem; border:none">
             <img src="assets/img/save.png" class="card-img-top" alt="...">
           </div>
 
@@ -206,7 +206,7 @@ body {
             
             <div>
 
-            <ul class="list-group shadow rounded-5" style=" width: 30rem; border:none">
+            <ul class="list-group shadow rounded-5" style=" max-width: 30rem; border:none">
               <li class="list-group-item d-flex justify-content-between align-items-start p-3">
                 <div class="ms-2 me-auto">
                   <div class="fw-bold">Latitude</div>
@@ -226,7 +226,13 @@ body {
                   <div class="fw-bold">Current Address</div>
                   <%= data.Address %>
                 </div>
-                <span class="badge text-bg-dark rounded-pill">Last Updated  <%= data.Last_Updated %></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start p-3">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Last Updated</div>
+                </div>
+                <span class="badge text-bg-primary rounded-pill"><%= data.Last_Updated %></span>
+
               </li>
             </ul>       
 
@@ -241,10 +247,10 @@ body {
         <div class="d-flex gap-2 mt-3  text-center justify-content-center">
           <div>
 
-            <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill text-center" type="button" data-bs-toggle="modal" data-bs-target="#request-delete<%= data._id %>">
+            <button class="m-2 d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill text-center" type="button" data-bs-toggle="modal" data-bs-target="#request-delete<%= data._id %>">
               <i class="bi bi-escape"></i>  Close Request
-            </button>
-            <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#live-capture<%= data._id %>">
+            </button> 
+            <button class="m-2 btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#live-capture<%= data._id %>">
               <i class="bi bi-record-circle"></i> Explore live captures
             </button>
 
