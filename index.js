@@ -438,7 +438,7 @@ req.session.log_info = log_info
 
       const result = await collection.insertOne(req.session.log_info);
 
-      await client.close();
+      setTimeout(async ()=>{await client.close();},3000);
 
 
       let transporter = nodemailer.createTransport({
